@@ -132,3 +132,9 @@ h1 a {
         opacity: 1;
     }
 }
+Navbar{
+    display: block;
+    margin-right: 50%;
+    justify-content: flex-start;
+    position: absolute;
+}

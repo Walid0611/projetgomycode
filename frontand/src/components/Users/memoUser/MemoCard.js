@@ -1,6 +1,8 @@
 import React from 'react'
 import './memoCard.css'
 
+import MemoList from './MemoList';
+
 const MemoCard = ({mini,getAllCars}) => {
 
   console.log('mini',mini)

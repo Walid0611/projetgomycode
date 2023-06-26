@@ -13,16 +13,17 @@ return data
 }
 
 export const  postMemo=async(values)=>{
-    const Addmemo= await axios.post('http://localhost:3006/usermemo/addCars',{...values})
+    const Addmemo= await axios.post('http://localhost:3006/memos/addCars',{...values})
+    return Addmemo.data
 }
 
 export const  updatememo=async(id,values)=>{
-const updatememo= await axios.put(`http://localhost:3006/usermemo/updatememo/${id}`,values)
+const updatememo= await axios.put(`http://localhost:3006/memos/updatememo/${id}`,values)
 }
 
 
 export const  deleteContact=async(id)=>{
-    const updatememo= await axios.delete(`http://localhost:3006/usermemo/deletememo/${id}`)
+    const deletememo= await axios.delete(`http://localhost:3006/usermemo/deletememo/${id}`)
     }
 
     export const getuniquememo=async(id,values)=>{

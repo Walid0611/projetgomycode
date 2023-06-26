@@ -41,7 +41,7 @@ MemoRoute.post('/CarController.addCars',
 ;
 
 // Route to update a memo
-MemoRoute.put('/updatememo/:id', async (req, res) => {
+MemoRoute.put('/memos/updatememo/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const updatedMemo = await MemoSchema.findByIdAndUpdate(id, { $set: { ...req.body } });
@@ -56,6 +56,7 @@ MemoRoute.put('/updatememo/:id', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
 
 // Route to delete a memo
 MemoRoute.delete('/deletememo/:id', async (req, res) => {

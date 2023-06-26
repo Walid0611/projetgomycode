@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {fetchAuthUser} from '../../api/authapi'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,6 +7,7 @@ import login from '../login/Login'
 import Users from '../Users/Users'
 import Admin from '../Admin/Admin'
 import Navbar from '../navbar/Navbar'
+import { fetchMemo } from './../../api/memo';
 
 
 
@@ -23,7 +24,9 @@ console.log('authUser',authUser)
 const getAuth = async ()=>{
     const data = await  fetchAuthUser()        
     console.log('data auth', data)
-    dispatch(setAuth(data))        
+    dispatch(setAuth(data)) 
+    
+    
   }
 
 
@@ -50,7 +53,8 @@ navigate('/login')
     
     </div>):(<login/>) } 
     <button onClick={()=>logout()} >logout</button>
-      </div>         
+      </div>   
+         
      
   )
 }

@@ -6,12 +6,13 @@ import Navbar from '../navbar/Navbar'
 
 
 
+
+
+
 const Users = ({auth ,logout}) => {
   return (
     <div className="container">
-  <h1>
-    <a href="#menu">Click me</a>
-  </h1>
+ <Navbar/>
   <div className="popover" id="menu">
     <div className="content">
       <a href="#" className="close" />
@@ -39,7 +40,7 @@ const Users = ({auth ,logout}) => {
           </div>
           <div className="nav_list_item">
             <li>
-              <a href="#">Contact</a>
+              <a href="#">Contact </a>
             </li>
           </div>
         </ul>
