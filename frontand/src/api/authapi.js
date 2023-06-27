@@ -6,7 +6,6 @@ export const  postauthUser = async(value)=>{
 }
 
 
-
 export const fetchAuthUser = async()=>{
     const token = localStorage.getItem('token')
     const {data} = await axios.get('http://localhost:3006/auth/moncompte', {headers:{Authorization:token}})

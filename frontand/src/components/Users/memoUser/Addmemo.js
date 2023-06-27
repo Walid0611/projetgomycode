@@ -61,7 +61,7 @@ const Addmemo = ({updatememo}) => {
   required=""
   value={image}
   onChange={(e) => setImage(e.target.value)}
-  alt="Image description"
+  alt="Image "
 />
 
         <div className="form-field col-lg-6 ">
