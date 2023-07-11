@@ -8,6 +8,7 @@ import Users from '../Users/Users'
 import Admin from '../Admin/Admin'
 import Navbar from '../navbar/Navbar'
 import { fetchMemo } from './../../api/memo';
+import Paiment from './../navbar/Paiment';
 
 
 
