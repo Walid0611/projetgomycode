@@ -1,8 +1,13 @@
 import React from 'react'
+import UsersList from './UsersList';
+
 
 const Admin = () => {
   return (
-    <div>Admin</div>
+    <div>
+   <UsersList/> 
+    </div>
+    
   )
 }
 

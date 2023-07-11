@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const UsresList = createSlice({
+const UsresListSlice = createSlice({
     name:"walidList",
     initialState:[{
        
@@ -13,16 +13,16 @@ const UsresList = createSlice({
     UserName:"user2  ",
     email:"user2@gmail.com",
     password:"azerty",
-   role:"user"
+   role:"user 2"
 
 }
 ],
     reducers:{
-        setListUser:(state,action)=>{
+        setUsersList:(state,action)=>{
             return action.payload
         }
     }
 })
 
-export const { setUsresList} = UsresListSlice.actions
-export default UsresList.reducer
+export const { setUsersList } = UsresListSlice.actions
+export default UsresListSlice.reducer

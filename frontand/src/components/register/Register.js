@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './register.css';
 import { useNavigate } from 'react-router-dom';
 import { postauthUser } from '../../api/authapi';
@@ -8,6 +8,13 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      navigate('/app/PrivateRoute');
+    }
+  }, [navigate]);
 
   const register = async () => {
     try {
@@ -27,7 +34,7 @@ const Register = () => {
           <div className="content">
             <div className="welcome">Hello There!</div>
             <div className="subtitle">
-              We're almost done. Before using our services you need to create an account.
+              We're almost done. Before using our services, you need to create an account.
             </div>
             <div className="input-fields">
               <input

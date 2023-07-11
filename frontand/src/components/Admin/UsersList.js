@@ -1,36 +1,34 @@
 import React, { useEffect } from 'react';
-import CardUsers from './CardUsers';
-import { fetchMemo,deleteContact } from '../../api/memo';
+import UserCards from './UserCards';
+import { fetchMemo, deleteContact } from '../../api/memo';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUsresList } from '../../Store/UsresListSlice';
+import { setUsersList } from '../../Store/UsresListSlice';
+// import { setUsersList } from '../../Store/UsersListSlice';
 
 const UsersList = () => {
- 
   const Users = useSelector((state) => state.UserElement);
-console.log ('UserElement',Users)
+  console.log('UserElement', Users);
 
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
   const getAllUser = async () => {
     try {
       const data = await fetchMemo();
-      console.log("donnees Users:", data.Users)
-      dispatch(setListUser(data.Users));
+      console.log('donnees Users:', data.Users);
+      dispatch(setUsersList(data.Users));
     } catch (err) {
-      console.err('Error users:', err);
+      console.error('Error users:', err);
     }
   };
-
 
   const handleDelete = async (userId) => {
     try {
       await deleteContact(userId);
       getAllUser();
     } catch (err) {
-      console.err('Error deleting :', err);
+      console.error('Error deleting:', err);
     }
   };
-
- 
 
   useEffect(() => {
     getAllUser();
@@ -38,7 +36,8 @@ const dispatch = useDispatch();
 
   return (
     <div>
-      {Users.map((e) => ( <UserCards  miniUser={e}  getAllUser={getAllUser}     deleteContact={deleteContact}  />
+      {Users.map((e) => (
+        <UserCards miniUser={e} getAllUser={getAllUser} deleteContact={deleteContact} />
       ))}
     </div>
   );
